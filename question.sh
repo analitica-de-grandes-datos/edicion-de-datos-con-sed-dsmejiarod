@@ -41,3 +41,5 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
+#!/usr/bin/env bash
+sed -r 's|([0-9][0-9])/([0-9][0-9])/([0-9][0-9])|20\3-\2-\1|g;s|;\\n|;\\N|g;s|([0-9])/([0-9])/([[:digit:]]*)|\3-0\2-0\1|g;s|;n|;\\N|g;s|;N|;\\N|g;s|;;|;\\N;|g;s|,|.|g;s|;|,|g;s|\\N,\\N,|\\N,\\N,\\N|g;s|C,\\N,|C,\\N,\\N|g;s|[a-z]|\U&|g' data.csv > output.csv
